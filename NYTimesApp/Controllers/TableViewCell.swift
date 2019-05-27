@@ -1,14 +1,14 @@
 //
-//  ViewedTableViewCell.swift
+//  TableViewCell.swift
 //  NYTimesApp
 //
-//  Created by Konstantin Kalivod on 5/23/19.
+//  Created by Konstantin Kalivod on 5/27/19.
 //  Copyright © 2019 Kostya Kalivod. All rights reserved.
 //
 
 import UIKit
 
-class ViewedTableViewCell: UITableViewCell {
+class TableViewCell: UITableViewCell {
     // MARK: - IBOutlets
     @IBOutlet weak var thumbnailImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
@@ -24,5 +24,5 @@ class ViewedTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+    
 }

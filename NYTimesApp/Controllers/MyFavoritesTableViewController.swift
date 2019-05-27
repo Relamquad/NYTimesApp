@@ -45,8 +45,7 @@ class MyFavoritesTableViewController: UITableViewController {
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "myFavoriteCellId", for: indexPath) as! MyFavoritesTableViewCell
-        
+        let cell = Bundle.main.loadNibNamed("TableViewCell", owner: self, options: nil)?.first as! TableViewCell
         let myResultArray = myArticleList[indexPath.row]
         cell.titleLabel.text = myResultArray.title
         cell.abstarctLabel.text = myResultArray.abstract
@@ -59,7 +58,7 @@ class MyFavoritesTableViewController: UITableViewController {
 }
     // MARK: - Segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "favoritedDetailSegue" {
+        if segue.identifier == "favoriteDetailSegue" {
             if let indexPath = tableView.indexPathForSelectedRow{
                 let myResultArray = myArticleList[indexPath.row]
                 let dvc = segue.destination as! DetailViewController
@@ -73,6 +72,7 @@ class MyFavoritesTableViewController: UITableViewController {
         }
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "favoriteDetailSegue", sender: self)
         tableView.deselectRow(at: indexPath, animated: true)
     }
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

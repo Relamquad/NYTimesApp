@@ -38,8 +38,8 @@ class ViewedTableViewController: UITableViewController {
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ViewedCellId", for: indexPath) as! ViewedTableViewCell
-        
+        let cell = Bundle.main.loadNibNamed("TableViewCell", owner: self, options: nil)?.first as! TableViewCell
+
         let myResultArray = myArticleList[indexPath.row]
         cell.titleLabel.text = myResultArray.title
         cell.abstarctLabel.text = myResultArray.abstract
@@ -52,11 +52,15 @@ class ViewedTableViewController: UITableViewController {
     }
     // MARK: - Segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "ViewedDetailSegue" {
+        if segue.identifier == "viewedDetailSegue" {
             if let indexPath = tableView.indexPathForSelectedRow{
                 Managers.segueDetail(segue: segue, indexPath: indexPath.row, list: self.myArticleList)
             }
         }
+    }
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "viewedDetailSegue", sender: self)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     // MARK: - Edit Row
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {

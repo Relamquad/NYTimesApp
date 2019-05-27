@@ -38,8 +38,7 @@ class EmailedTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "EmaiedCellId", for: indexPath) as! EmailedTableViewCell
-        
+        let cell = Bundle.main.loadNibNamed("TableViewCell", owner: self, options: nil)?.first as! TableViewCell
         let myResultArray = myArticleList[indexPath.row]
         cell.titleLabel.text = myResultArray.title
         cell.abstarctLabel.text = myResultArray.abstract
@@ -57,6 +56,10 @@ class EmailedTableViewController: UITableViewController {
                 Managers.segueDetail(segue: segue, indexPath: indexPath.row, list: self.myArticleList)                
             }
         }
+    }
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "emailedDetailSegue", sender: self)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     // MARK: - Edit Row
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {

@@ -38,8 +38,8 @@ class SharedTableViewController: UITableViewController {
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "SharedCellId", for: indexPath) as! SharedTableViewCell
-        
+        let cell = Bundle.main.loadNibNamed("TableViewCell", owner: self, options: nil)?.first as! TableViewCell
+
         let myResultArray = myArticleList[indexPath.row]
         cell.titleLabel.text = myResultArray.title
         cell.abstarctLabel.text = myResultArray.abstract
@@ -55,10 +55,12 @@ class SharedTableViewController: UITableViewController {
         if segue.identifier == "sharedDetailSegue" {
             if let indexPath = tableView.indexPathForSelectedRow{
                 Managers.segueDetail(segue: segue, indexPath: indexPath.row, list: self.myArticleList)
-
-                
             }
         }
+    }
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "sharedDetailSegue", sender: self)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     // MARK: - Edit Row
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {

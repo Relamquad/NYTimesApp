@@ -18,15 +18,6 @@ class Managers{
 
         return ac
     }
-    class func segueDetail(segue: UIStoryboardSegue, indexPath: Int, list: [Article] ){
-            let myResultArray = list[indexPath]
-            let dvc = segue.destination as! DetailViewController
-            dvc.titleText = myResultArray.title
-            dvc.abstract = myResultArray.abstract
-            dvc.date = myResultArray.published_date
-            dvc.imageURL = myResultArray.urlImage
-            dvc.url = myResultArray.url
-            
-        }
+
     }
 

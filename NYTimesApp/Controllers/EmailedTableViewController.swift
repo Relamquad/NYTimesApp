@@ -10,7 +10,7 @@ import UIKit
 import Kingfisher
 import CoreData
 
-class EmailedTableViewController: UITableViewController, UITabBarDelegate {
+class EmailedTableViewController: UITableViewController {
     // MARK: - Variables
     var myArticleList : Array = [Article]()
     var myArticleSavedList : Array = [SavedArticles]()
@@ -32,10 +32,11 @@ class EmailedTableViewController: UITableViewController, UITabBarDelegate {
         } catch {
             print(error.localizedDescription)
         }
+        
         default:
             break
         }
-
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadFunc), name: NSNotification.Name(rawValue: "reload"), object: nil)
     }
 
     override func viewDidLoad() {
@@ -174,8 +175,6 @@ class EmailedTableViewController: UITableViewController, UITabBarDelegate {
         
     }
     
-    
-    
     // MARK: - Refreshing funcs
     func addRefreshControl() {
         
@@ -190,15 +189,10 @@ class EmailedTableViewController: UITableViewController, UITabBarDelegate {
         self.tableView.reloadData()
         print("RELOADED")
     }
-    
-    
-    func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
-        let tag = self.tabBarController?.tabBar.selectedItem!.tag
-        switch tag {
-        case TabBarTag.myFavorite.rawValue:
-            tableView.reloadData()
-        default:
-            break
+    @objc func reloadFunc(notification: NSNotification) {
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
         }
+        
     }
 }

@@ -14,11 +14,6 @@ class MainTabBarViewController: UITabBarController, UITabBarControllerDelegate{
         super.viewDidLoad()
         self.delegate = self
        setupTabBar()
-
-        
-
-
-        // Do any additional setup after loading the view.
     }
     
     func setupTabBar() {
@@ -45,5 +40,8 @@ class MainTabBarViewController: UITabBarController, UITabBarControllerDelegate{
         
         viewControllers = [emailedController, sharedController, viewedController, myFavoriteController]
     }
-
+    override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "reload"), object: nil)
+        print("TAPTAPTAP")
+    }
 }

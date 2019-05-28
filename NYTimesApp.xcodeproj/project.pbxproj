@@ -7,10 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		602AFFEC229D1F2E0073F140 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602AFFEA229D1F2E0073F140 /* TableViewCell.swift */; };
-		602AFFED229D1F2E0073F140 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 602AFFEB229D1F2E0073F140 /* TableViewCell.xib */; };
 		60852F7B229C2168001872E1 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60852F7A229C2168001872E1 /* MainTabBarViewController.swift */; };
-		60A2A9A6229D3B9900291CA3 /* Controllers in Resources */ = {isa = PBXBuildFile; fileRef = 60A2A9A5229D3B9900291CA3 /* Controllers */; };
+		60A2A9A9229D3CA100291CA3 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60A2A9A7229D3CA100291CA3 /* TableViewCell.xib */; };
+		60A2A9AA229D3CA100291CA3 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A2A9A8229D3CA100291CA3 /* TableViewCell.swift */; };
 		60C81AE12295937C005D8577 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C81AE02295937C005D8577 /* AppDelegate.swift */; };
 		60C81AE62295937C005D8577 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60C81AE42295937C005D8577 /* Main.storyboard */; };
 		60C81AE92295937C005D8577 /* NYTimesApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 60C81AE72295937C005D8577 /* NYTimesApp.xcdatamodeld */; };
@@ -26,10 +25,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		602AFFEA229D1F2E0073F140 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TableViewCell.swift; path = ../../../../../.Trash/TableViewCell.swift; sourceTree = "<group>"; };
-		602AFFEB229D1F2E0073F140 /* TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TableViewCell.xib; path = ../../../../../.Trash/TableViewCell.xib; sourceTree = "<group>"; };
 		60852F7A229C2168001872E1 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
-		60A2A9A5229D3B9900291CA3 /* Controllers */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Controllers; sourceTree = "<group>"; };
+		60A2A9A7229D3CA100291CA3 /* TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
+		60A2A9A8229D3CA100291CA3 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		60C81ADD2295937C005D8577 /* NYTimesApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NYTimesApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		60C81AE02295937C005D8577 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		60C81AE52295937C005D8577 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -95,9 +93,8 @@
 				60852F7A229C2168001872E1 /* MainTabBarViewController.swift */,
 				60C81AF52295959F005D8577 /* EmailedTableViewController.swift */,
 				60C81B102297DD9C005D8577 /* DetailViewController.swift */,
-				602AFFEA229D1F2E0073F140 /* TableViewCell.swift */,
-				602AFFEB229D1F2E0073F140 /* TableViewCell.xib */,
-				60A2A9A5229D3B9900291CA3 /* Controllers */,
+				60A2A9A8229D3CA100291CA3 /* TableViewCell.swift */,
+				60A2A9A7229D3CA100291CA3 /* TableViewCell.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -210,9 +207,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				60A2A9A6229D3B9900291CA3 /* Controllers in Resources */,
+				60A2A9A9229D3CA100291CA3 /* TableViewCell.xib in Resources */,
 				60C81AEE2295937E005D8577 /* LaunchScreen.storyboard in Resources */,
-				602AFFED229D1F2E0073F140 /* TableViewCell.xib in Resources */,
 				60C81AEB2295937E005D8577 /* Assets.xcassets in Resources */,
 				60C81AE62295937C005D8577 /* Main.storyboard in Resources */,
 			);
@@ -278,8 +274,8 @@
 				60C81B17229AE109005D8577 /* DataManager.swift in Sources */,
 				60C81B13229982DE005D8577 /* AlertMaganer.swift in Sources */,
 				60C81AE92295937C005D8577 /* NYTimesApp.xcdatamodeld in Sources */,
-				602AFFEC229D1F2E0073F140 /* TableViewCell.swift in Sources */,
 				60C81AF62295959F005D8577 /* EmailedTableViewController.swift in Sources */,
+				60A2A9AA229D3CA100291CA3 /* TableViewCell.swift in Sources */,
 				60852F7B229C2168001872E1 /* MainTabBarViewController.swift in Sources */,
 				60C81B0B22966C00005D8577 /* APIManager.swift in Sources */,
 				60C81AE12295937C005D8577 /* AppDelegate.swift in Sources */,

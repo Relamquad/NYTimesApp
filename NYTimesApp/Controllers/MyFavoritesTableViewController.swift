@@ -12,14 +12,14 @@ import CoreData
 
 class MyFavoritesTableViewController: UITableViewController {
     // MARK: - Variables
-    var myArticleList : Array = [SavedArticles]()
+    var myArticleSavedList : Array = [SavedArticles]()
     
     override func viewWillAppear(_ animated: Bool) {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
         let fetchRequest : NSFetchRequest<SavedArticles> = SavedArticles.fetchRequest()
         do {
-            myArticleList = try context.fetch(fetchRequest)
+            myArticleSavedList = try context.fetch(fetchRequest)
         } catch {
             print(error.localizedDescription)
         }
@@ -40,13 +40,13 @@ class MyFavoritesTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return myArticleList.count
+        return myArticleSavedList.count
     }
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = Bundle.main.loadNibNamed("TableViewCell", owner: self, options: nil)?.first as! TableViewCell
-        let myResultArray = myArticleList[indexPath.row]
+        let cell = Bundle.main.loadNibNamed("TableViewCell", owner: self, options: nil)?.first as! MyTableViewCell
+        let myResultArray = myArticleSavedList[indexPath.row]
         cell.titleLabel.text = myResultArray.title
         cell.abstarctLabel.text = myResultArray.abstract
         cell.dateLabel.text = myResultArray.published_date
@@ -60,7 +60,7 @@ class MyFavoritesTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "favoriteDetailSegue" {
             if let indexPath = tableView.indexPathForSelectedRow{
-                let myResultArray = myArticleList[indexPath.row]
+                let myResultArray = myArticleSavedList[indexPath.row]
                 let dvc = segue.destination as! DetailViewController
                 dvc.titleText = myResultArray.title
                 dvc.abstract = myResultArray.abstract
@@ -81,13 +81,13 @@ class MyFavoritesTableViewController: UITableViewController {
     // MARK: - Delete Row
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            let myResultArray = self.myArticleList[indexPath.row]
+            let myResultArray = self.myArticleSavedList[indexPath.row]
             let appDelegate = UIApplication.shared.delegate as! AppDelegate
             let context = appDelegate.persistentContainer.viewContext
             
         do {
             context.delete(myResultArray)
-            self.myArticleList.remove(at: indexPath.row)
+            self.myArticleSavedList.remove(at: indexPath.row)
             try context.save()
         } catch {
             print(error.localizedDescription)

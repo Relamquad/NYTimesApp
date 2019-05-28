@@ -9,114 +9,20 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Tab Bar Controller-->
+        <!--Main Tab Bar View Controller-->
         <scene sceneID="fGX-Kq-vDY">
             <objects>
-                <tabBarController id="XYM-AT-reU" sceneMemberID="viewController">
+                <tabBarController id="XYM-AT-reU" customClass="MainTabBarViewController" customModule="NYTimesApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="t5R-h2-5eW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="selectedImageTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </tabBar>
-                    <connections>
-                        <segue destination="VjL-Em-aM8" kind="relationship" relationship="viewControllers" id="c9m-7f-Zgn"/>
-                        <segue destination="YBc-iq-86D" kind="relationship" relationship="viewControllers" id="LZU-Es-s2W"/>
-                        <segue destination="4dZ-La-iE4" kind="relationship" relationship="viewControllers" id="HQc-04-W0T"/>
-                        <segue destination="7mC-kB-lo4" kind="relationship" relationship="viewControllers" id="3Ot-dK-xb0"/>
-                    </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l6i-00-fEn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1906" y="516"/>
-        </scene>
-        <!--Shared-->
-        <scene sceneID="4NA-i2-eNH">
-            <objects>
-                <tableViewController id="lE7-F4-pd5" customClass="SharedTableViewController" customModule="NYTimesApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="85" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="fUw-qM-9qk">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <connections>
-                            <outlet property="dataSource" destination="lE7-F4-pd5" id="DW7-Fp-GCp"/>
-                            <outlet property="delegate" destination="lE7-F4-pd5" id="U12-m6-qPd"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Shared" id="bMr-rS-fwS"/>
-                    <connections>
-                        <segue destination="7a7-z1-sr8" kind="show" identifier="sharedDetailSegue" id="0fP-j8-4BW"/>
-                    </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Qp1-2v-biM" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="705.79710144927537" y="181.47321428571428"/>
-        </scene>
-        <!--Viewed-->
-        <scene sceneID="Ru9-rs-FRO">
-            <objects>
-                <tableViewController id="X8y-zV-Nns" customClass="ViewedTableViewController" customModule="NYTimesApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="85" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="g1P-vP-ZI8">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <connections>
-                            <outlet property="dataSource" destination="X8y-zV-Nns" id="pax-qH-T60"/>
-                            <outlet property="delegate" destination="X8y-zV-Nns" id="tzy-fX-plR"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Viewed" id="7Ne-KW-Gpa"/>
-                    <connections>
-                        <segue destination="7a7-z1-sr8" kind="show" identifier="viewedDetailSegue" id="faq-PN-FPD"/>
-                    </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6ZH-E5-uai" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="705.79710144927537" y="904.6875"/>
-        </scene>
-        <!--Favorite-->
-        <scene sceneID="cbZ-qu-0r4">
-            <objects>
-                <tableViewController id="wgT-rH-GK6" customClass="MyFavoritesTableViewController" customModule="NYTimesApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="85" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="DJ2-co-5XS">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <connections>
-                            <outlet property="dataSource" destination="wgT-rH-GK6" id="xTg-ar-kqo"/>
-                            <outlet property="delegate" destination="wgT-rH-GK6" id="oqx-fW-Jer"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Favorite" id="LLp-kY-GtB"/>
-                    <connections>
-                        <segue destination="7a7-z1-sr8" kind="show" identifier="favoriteDetailSegue" id="4l3-9q-6Ck"/>
-                    </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5pq-Pd-x54" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="705.79710144927537" y="1701.5625"/>
-        </scene>
-        <!--Emailed-->
-        <scene sceneID="nB9-HJ-wkT">
-            <objects>
-                <tableViewController id="vdT-Jt-n2y" customClass="EmailedTableViewController" customModule="NYTimesApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="85" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="N7y-A5-wtZ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <connections>
-                            <outlet property="dataSource" destination="vdT-Jt-n2y" id="JIw-Vi-Hkn"/>
-                            <outlet property="delegate" destination="vdT-Jt-n2y" id="wSe-1P-wwh"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Emailed" id="vgg-Oy-1d4"/>
-                    <connections>
-                        <segue destination="7a7-z1-sr8" kind="show" identifier="emailedDetailSegue" id="mjn-Zd-B9S"/>
-                    </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="YVF-hm-jqV" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="718.84057971014499" y="-537.05357142857144"/>
+            <point key="canvasLocation" x="948" y="-537"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="apa-0q-OUI">
@@ -127,31 +33,31 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5BJ-rF-eu5">
-                                <rect key="frame" x="0.0" y="88" width="414" height="252"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="252"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="252" id="YUv-tc-DNw"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eev-Q9-P5A">
-                                <rect key="frame" x="20" y="387" width="374" height="22"/>
+                                <rect key="frame" x="20" y="343" width="374" height="22"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gKN-Q9-Cqv">
-                                <rect key="frame" x="20" y="517" width="38.5" height="20"/>
+                                <rect key="frame" x="20" y="473" width="38.5" height="20"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OPx-bM-CYg">
-                                <rect key="frame" x="20" y="446" width="374" height="20.5"/>
+                                <rect key="frame" x="20" y="402" width="374" height="20.5"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TWQ-mZ-EPZ">
-                                <rect key="frame" x="121" y="507" width="108" height="30"/>
+                                <rect key="frame" x="121" y="463" width="108" height="30"/>
                                 <color key="backgroundColor" red="0.34897816181182861" green="0.34904351830482483" blue="0.34897404909133911" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Read the article">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -189,105 +95,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vZD-Z0-esv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2496" y="516"/>
-        </scene>
-        <!--Emailed-->
-        <scene sceneID="83c-eK-rQa">
-            <objects>
-                <navigationController title="Emailed" automaticallyAdjustsScrollViewInsets="NO" id="VjL-Em-aM8" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Emailed" image="email-7" id="TS9-UU-DiV"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="FWf-Xm-9hA">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <textAttributes key="titleTextAttributes">
-                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </textAttributes>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="abg-Ds-gzx">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </toolbar>
-                    <connections>
-                        <segue destination="vdT-Jt-n2y" kind="relationship" relationship="rootViewController" id="l2S-Ue-AS4"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xmx-gW-mgT" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-191.30434782608697" y="-537.05357142857144"/>
-        </scene>
-        <!--Shared-->
-        <scene sceneID="Ysh-ef-7PW">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="YBc-iq-86D" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Shared" image="paper-plane-7" id="XPm-2W-Hil">
-                        <color key="badgeColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                    </tabBarItem>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="tSt-kX-2u5">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="lE7-F4-pd5" kind="relationship" relationship="rootViewController" id="flC-6P-rwN"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="VcE-rp-1A1" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-204.34782608695653" y="181.47321428571428"/>
-        </scene>
-        <!--Viewed-->
-        <scene sceneID="czH-5r-uXf">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4dZ-La-iE4" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Viewed" image="earth-america-7" id="UUD-UA-JJj"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="gmV-ep-Tfh">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="X8y-zV-Nns" kind="relationship" relationship="rootViewController" id="MPS-Pe-BMw"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9u5-OZ-ejP" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-204.34782608695653" y="904.6875"/>
-        </scene>
-        <!--Favorite-->
-        <scene sceneID="m6p-L5-lO7">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7mC-kB-lo4" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Favorite" image="star-7" id="h4a-8N-knd"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="ITG-P7-KyU">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="wgT-rH-GK6" kind="relationship" relationship="rootViewController" id="yKy-yx-qBk"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fAl-VG-VSh" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-204.34782608695653" y="1701.5625"/>
+            <point key="canvasLocation" x="2641" y="-537"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="earth-america-7" width="30" height="30"/>
-        <image name="email-7" width="30" height="30"/>
-        <image name="paper-plane-7" width="30" height="30"/>
-        <image name="star-7" width="30" height="30"/>
-    </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="4l3-9q-6Ck"/>
-    </inferredMetricsTieBreakers>
 </document>
